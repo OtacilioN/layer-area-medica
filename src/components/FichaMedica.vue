@@ -1,31 +1,35 @@
 <template>
   <v-container>
-    <v-card max-width="600" class="mx-auto my-12">
+    <v-card max-width="550" class="mx-auto my-12">
       <v-card-title>Aluno Fulano da Silva</v-card-title>
       <v-card-text class="body-text">14 de Dezembro de 1996 (22 anos de idade)</v-card-text>
       <v-divider></v-divider>
       <v-card-text class="body-text">
-        <div class="record-item">
-          <h3>Problemas de saúde </h3>
-          <span style="margin-left: 8px; font-weight: bold; color: black "> Asmático e com histórico de inventite aguda</span>
-        </div>
-
-        <div class="record-item">
-          <h3>Nome do pai: </h3>
-          <span style="margin-left: 8px; font-weight: bold; color: black "> Ciclano de tal</span>
-        </div>
+        <ItemMedico icon="mdi-clipboard-text-outline" label="Observações Médicas"></ItemMedico>
+        <ItemMedico icon="mdi-cancel" label="Alergias"></ItemMedico>
+        <TipoSanguineo></TipoSanguineo>
+        <ItemMedico icon="mdi-home-outline" label="Endereço"></ItemMedico>
+        <ItemMedico icon="mdi-account-outline" label="Nome do responsável"></ItemMedico>
+        <ItemMedico icon="mdi-phone-outline" label="Telefone do responsável"></ItemMedico>
 
       </v-card-text>
-      <v-card-actions>
+      <!-- <v-card-actions>
         <v-btn text>Click</v-btn>
-      </v-card-actions>
+      </v-card-actions> -->
     </v-card>
   </v-container>
 </template>
 
 <script>
+import ItemMedico from './ItemMedico';
+import TipoSanguineo from './TipoSanguineo';
+
 export default {
   name: 'FichaMedica',
+  components: {
+    ItemMedico,
+    TipoSanguineo
+  },
   data: () => ({
     //
   }),
