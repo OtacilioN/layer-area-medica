@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card max-width="550" class="mx-auto my-12">
-      <v-card-title>Aluno Fulano da Silva</v-card-title>
+      <v-card-title>{{this.user}}</v-card-title>
       <v-card-text class="body-text">14 de Dezembro de 1996 (22 anos de idade)</v-card-text>
       <v-divider></v-divider>
       <v-card-text class="body-text">
@@ -30,6 +30,7 @@ export default {
     ItemMedico,
     TipoSanguineo
   },
+  props: ['user'],
   data: () => ({
     //
   }),

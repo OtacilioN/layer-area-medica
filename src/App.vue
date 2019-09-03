@@ -9,13 +9,14 @@
     </v-app-bar>
 
     <v-content>
-      <FichaMedica />
+      <FichaMedica v-bind:user="this.user" />
     </v-content>
   </v-app>
 </template>
 
 <script>
 import FichaMedica from './components/FichaMedica';
+import { getSelfUser } from './remote/layers-toolkit';
 
 export default {
   name: 'App',
@@ -23,8 +24,11 @@ export default {
     FichaMedica,
   },
   data: () => ({
-    //
+    user: null
   }),
+  mounted() {
+    getSelfUser().then(response => (this.user = response.data.name))
+  }
 };
 </script>
 
